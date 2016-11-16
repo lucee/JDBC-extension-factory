@@ -13,6 +13,10 @@
 	<cfset data=struct()>
 	
     
+	<cffunction name="customParameterSyntax" returntype="struct" output="no">
+		<cfreturn {leadingdelimiter:';',delimiter:';',separator:'='}>
+	</cffunction>
+	
 	<cffunction name="onBeforeUpdate" returntype="void" output="no">
 		<cfif StructKeyExists(form,'custom_charset') and len(form.custom_charset) EQ 0>
         	<cfset StructDelete(form,'custom_charset',false)>
